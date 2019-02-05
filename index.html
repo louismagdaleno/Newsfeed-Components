@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
+    <script src="./Post/Post.js" async></script>
   </head>
   <body>
     <div class="header">
@@ -25,9 +26,9 @@
     <section class="post">
       <h2>What's on your mind?</h2>
       <form>
-        <input type='text' placeholder='Title' name='title'>
-        <input type='text' placeholder='Content' name='content' class="post-content">
-        <button type='submit'>Submit</button>
+        <input type='text' placeholder='Title' name='title' id="post-heading">
+        <input type='text' placeholder='Content' name='content' id="post-content">
+        <span>Submit</span>
       </form>
     </section>
     <div class="articles">
