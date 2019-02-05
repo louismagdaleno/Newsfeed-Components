@@ -26,10 +26,27 @@ post_form_btn.addEventListener('click', e => {
     let content = post_form.firstElementChild.nextElementSibling.value;
     console.log(content);
     if (heading.length >0 && content.length > 0) {
-        let art = new ArticleComponent({'post_heading': heading, 'post_content': content});
-        console.log('logging art now');
-        console.log(art);
+        let art = document.createElement('div');
         art.classList.add('article');
+
+        let content = document.createElement('p');
+        content.textContent = content;
+
+        let heading = document.createElement('h2');
+        heading.textContent = heading;
+
+        let date = document.createElement('p');
+        date.classList.add('date');
+        date.textContent = new Date();
+
+        let post_button = document.createElement('span');
+
+
+        art.append(heading);
+        art.append(date);
+        art.append(content);
+        art.append(post_button);
+  
         let parent = document.querySelector('.articles');
         parent.prepend(art);
     }
