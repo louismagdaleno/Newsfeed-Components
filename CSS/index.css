@@ -105,6 +105,34 @@
 .article-open {
   height: 400px;
 }
+.post {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: blue;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  width: 758px;
+  height: 300px;
+  box-shadow: 2px 2px 2px lightgrey;
+  display: flex;
+  flex-direction: column;
+}
+
+.post form {
+  display: flex;
+  flex-direction: column;
+}
+.post form input , .post form button {
+  width: 80%;
+}
+
+.post-content {
+  height: 200px;
+}
 html,
 body {
   margin: 0;
