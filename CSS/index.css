@@ -163,7 +163,7 @@
 
 }
 
-.down-arrow {
+.down-arrow, .up-arrow {
   height: 20px;
   width: 20px;
 }
