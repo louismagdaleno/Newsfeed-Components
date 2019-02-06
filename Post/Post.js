@@ -46,7 +46,12 @@ post_form_btn.addEventListener('click', e => {
 
         let post_button = document.createElement('span');
         post_button.classList.add('expandButton');
-        post_button.textContent = 'expand';
+        //post_button.textContent = 'expand';
+
+        let post_button_img = document.createElement('img');
+        post_button_img.setAttribute('src', "./assets/down-arrow.svg")
+        post_button_img.classList.add('down-arrow');
+        post_button.appendChild(post_button_img);
 
         // clean up input fields
         post_form.firstElementChild.value = '';
@@ -66,6 +71,14 @@ post_form_btn.addEventListener('click', e => {
 
         // run the new article through the Article constructor
         art =  new Article(art);
+
+        art.style.backgroundColor = 'rgb(160, 1, 30)';
+        art.style.color = 'white';
+
+        setTimeout(function () {
+            art.style.backgroundColor = 'white';
+            art.style.color = 'black';
+        }, 3000);
 
         
     }
