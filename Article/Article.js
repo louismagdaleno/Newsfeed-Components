@@ -16,14 +16,15 @@ class Article {
 
   expandArticle () {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle('article-open');
-
+    
     // toggle up and down arrows based on whether the article is expanded or not
     let buttonImg = this.expandButton.querySelector('img');
     if (buttonImg.getAttribute('src') == './assets/down-arrow.svg') {
       buttonImg.setAttribute('src', './assets/up-arrow.svg');
+      TweenMax.to(this.domElement, 1, {className: '+=article-open'});
     } else {
       buttonImg.setAttribute('src', "./assets/down-arrow.svg");
+      TweenMax.to(this.domElement, 1, {className: '-=article-open'});
     }
 
 
