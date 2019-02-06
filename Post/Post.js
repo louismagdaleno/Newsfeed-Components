@@ -9,15 +9,7 @@ console.log(post_form_btn);
 
 // click event handler for post button
 post_form_btn.addEventListener('click', e => {
-    // button is clicked, change colors to indicate to user that success
-    e.target.style.backgroundColor = 'green';
-    e.target.style.color = 'white';
-
-    // change colors back to normal after a short time
-    setTimeout(function () {
-        e.target.style.backgroundColor = 'white';
-        e.target.style.color = 'black';
-    }, 2000);
+   
 
     // grab the values from the forms inputs
     let heading = post_form.firstElementChild.value;
@@ -26,6 +18,16 @@ post_form_btn.addEventListener('click', e => {
 
     // edge case testing -- if the values are empty, don't do anything
     if (heading.length >0 && content.length > 0) {
+         // button is clicked, change colors to indicate to user that success
+        e.target.style.backgroundColor = 'rgb(160, 1, 30)';
+        e.target.style.color = 'white';
+
+         // change colors back to normal after a short time
+        setTimeout(function () {
+            e.target.style.backgroundColor = 'white';
+            e.target.style.color = 'black';
+        }, 2000);
+
         // create elements for an article post and set appropriate classes / text content
         let art = document.createElement('div');
         art.classList.add('article');
