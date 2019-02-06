@@ -69,17 +69,20 @@ post_form_btn.addEventListener('click', e => {
         // add the newly constructed article node to the beginning of articles
         parent.prepend(art);
 
-        // run the new article through the Article constructor
-        art =  new Article(art);
-
-        art.style.backgroundColor = 'rgb(160, 1, 30)';
-        art.style.color = 'white';
+        // change border to indicate new post to user
+        art.style.border = '1px solid rgb(160, 1, 30)';
 
         setTimeout(function () {
-            art.style.backgroundColor = 'white';
-            art.style.color = 'black';
-        }, 3000);
+            art.style.border = '1px solid lightgrey';
+        }, 1000);
 
+
+        // run the new article through the Article constructor
+        setTimeout(function () {
+        art =  new Article(art);
+    }, 1500);
+
+        
         
     }
     
