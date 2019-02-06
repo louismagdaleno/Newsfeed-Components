@@ -41,7 +41,8 @@ post_form_btn.addEventListener('click', e => {
 
         let date = document.createElement('p');
         date.classList.add('date');
-        date.textContent = new Date();
+        let options = {month: 'short', year: 'numeric', day: 'numeric'};
+        date.textContent = new Date().toLocaleDateString("en-US", options);
 
         let post_button = document.createElement('span');
         post_button.classList.add('expandButton');
