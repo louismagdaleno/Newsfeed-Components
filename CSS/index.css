@@ -22,7 +22,8 @@
 .header {
   width: 100%;
   height: 75px;
-  background-color: #388E3C;
+  background-color: rgb(160, 1, 30);
+  -webkit-font-smoothing: antialiased;
   color: white;
   display: flex;
   justify-content: center;
@@ -30,15 +31,188 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  animation: 1s fadein 0.5s forwards;
+	opacity: 0;
+	color: #fff;
 }
+
+@keyframes fadein {
+	100% {
+		opacity: 1;
+	}
+}
+
 .header h1 {
   margin: 0;
   font-size: 48px;
+  font-weight: 700;
 }
-html,
-body {
-  margin: 0;
+.menu-button {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
+.menu {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 200px;
+  height: 30vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: rgb(160, 1, 30);
+  border: 1px solid black;
+  border-left: none;
+  border-bottom: none;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+menu ul {
+ padding-left: 0;
+ width: 100%;
+}
+.menu ul li {
+  list-style-type: none;
+  font-size: 16px;
+  padding: 10px 0;
+  text-align: left;
+  color: white;
+  width: 100%;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 0;
+  text-align: left;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.menu ul li a:hover {
+  background-color: white;
+  color: rgb(160, 1, 30);
+}
+.menu--open {
+  display: block;
+}
+.articles {
+  margin-top: 95px;
+  opacity: 0;
+	margin-top: 100px;
+	animation: 1s slidefade 1s forwards;
+}
+
+@keyframes slidefade {
+	100% {
+		opacity: 1;
+		margin: 0;
+	}
+}
+.article {
+  margin: 20px 10%;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+.article h2 {
+  font-size: 28px;
   padding: 0;
-  font-family: 'Roboto';
-  background-color: #fffef7;
+  margin: 15px 0 0;
+}
+.article .date {
+  margin: 0;
+  font-size: 14px;
+}
+.article .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.article .expandButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+}
+.article-open {
+  height: 400px;
+}
+.post {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: blue;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  width: 758px;
+  height: 300px;
+  box-shadow: 2px 2px 2px lightgrey;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+	animation: 1s slidefade 1s forwards;
+}
+
+@keyframes slidefade {
+	100% {
+		opacity: 1;
+	}
+}
+
+.post form {
+  display: flex;
+  flex-direction: column;
+}
+.post form input, .post form textarea  {
+  width: 80%;
+}
+
+.post form span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+  border: 2px solid black;
+  height: 40px;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  border-radius: 10%;
+  font-size: 12px;
+}
+
+#post-content {
+  height: 140px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+}
+
+.down-arrow, .up-arrow {
+  height: 20px;
+  width: 20px;
 }
